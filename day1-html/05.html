@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang='pl'>
+	<head>
+		<meta charset="utf-8"/>
+		<title>
+		<!-- tytuł strony -->
+		Serwis komputerowy
+		</title>
+		<style>
+		thead {color:green;}
+		tbody {color:blue;}
+		tfoot {color:red;}
+
+		table, th, td {
+		  border: 1px solid black;
+		}
+	</style>
+	</head>
+	<body>
+		<form action="#" method="get">
+			<h1>
+				Formularz rezerwacji biletu lotniczego
+			</h1>
+			<p>
+				<!-- etykieta pola-->
+				<label for="labelImie">Podaj imié:</label></br>
+				<input type="text" id="labelImie" name="imie"/>  
+			</p>
+			<p>
+				<!-- pole tekstowe-->
+				<label>Podaj login:</label></br>
+				<input type="text" name="login"/>
+			</p>
+			<p>
+				<!-- pole password-->
+				<label>Podaj haslo:</label></br>
+				<input type="password" name="haslo"/>
+			</p>
+			<p>
+				<!-- pole jednokrotnego wyboru-->
+				<label>Podaj kolor:</label></br>
+				<input type="radio" name="kolor1" value="CZERWONY"/>CZERWONY<br/>
+				<input type="radio" name="kolor1" value="BIALY"/>BIALY<br/>
+				<input type="radio" name="kolor1" value="CZARNY"/>CZARNY<br/>
+			</p>
+			<p>
+				<!-- pole jednokrotnego wyboru-->
+				<label>Zgoda na marketing:</label></br>
+				<input type="checkbox" name="marketing1" value="firma1"/>Zgoda na marketing 1<br/>
+				<input type="checkbox" name="marketing2" value="firma2"/>Zgoda na marketing 2<br/>
+				<input type="checkbox" name="marketing3" value="firma3"/>Zgoda na marketing 3<br/>
+			</p>
+			<p>
+				<!-- pole select-->
+				<label>Wybierz kraj:</label></br>
+				<select name="kraj">
+					<option value="pos">Polska</option>
+					<option value="es">Hiszpania</option>
+					<option value="ger">Niemcy</option>
+				</select>
+			</p>
+			<p>
+				<!-- pole select-->
+				<label>Wybierz samochod:</label></br>
+				<select name="samochod">
+					<optgroup label="Japońskie">
+						<option value="mazda">Mazda</option>
+					</optgroup>
+					<optgroup label="Szwedzkie">
+						<option value="volvo">Volvo</option>
+					</optgroup>
+				</select>
+			</p>
+			<p>
+				<!-- pole opisowe-->
+				<textarea name="komentarz"></textarea>
+			</p>
+			<p>
+				<!-- przyciski-->
+				<!-- I sposob-->
+				<input type="submit" value="Wyslij"/>
+				<input type="reset" value="Wyczysc"/>
+				
+				<!-- II sposob-->
+				<button type="submit">Wyslij II</button>
+				<button type="reset">Wyczysc II</button>
+			</p>
+			
+		</form>
+	</body>
+</html>

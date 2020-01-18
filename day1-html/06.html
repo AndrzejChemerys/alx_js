@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang='pl'>
+	<head>
+		<meta charset="utf-8"/>
+		<title>
+		<!-- tytuł strony -->
+		Serwis komputerowy
+		</title>
+		<style>
+		label {color:blue;}
+		input {background-color:lightblue;}
+		button {background-color:red;}
+
+	</style>
+	</head>
+	<body>
+		<form action="#" method="get">
+			<h1>
+				Formularz rezerwacji biletu lotniczego
+			</h1>
+			<p>
+				<label for="labelName">Twoje imię:</label></br>
+				<input type="text" id="labelName" name="name" placeholder="Wpisz imię tutaj" autofocus required/>  
+			</p>
+			<p>
+				<label for="labelName">Twoje imię:</label></br>
+				<input type="text" id="labelName" name="name" placeholder="Wpisz imię tutaj" autofocus required/>  
+			</p>
+			<p>
+				<label for="email">Email:</label></br>
+				<input type="email" id="email" name="email" placeholder="Wpisz maila" required/>
+			</p>
+			<p>
+				<label for="labelDate">Data wylotu:</label></br>
+				<input type="date" id="labelDate" name="date"/>
+			</p>
+			<p>
+				<label>Wylot z:</label></br>
+				<select name="cityFrom" required>
+					<option value="">--wybierz--</option>
+					<option value="waw">Warszawa</option>
+					<option value="poz">Poznań</option>
+					<option value="gda">Gdańsk</option>
+				</select>
+			</p>
+			<p>
+				<label>Przylot do:</label></br>
+				<select name="cityTo">
+					<option value="waw">Warszawa</option>
+					<option value="poz">Poznań</option>
+					<option value="gda">Gdańsk</option>
+				</select>
+			</p>
+			<p>
+				<label>Klasa VIP:</label></br>
+				<input type="radio" name="vipStatus" value="yes"/>Tak<br/>
+				<input type="radio" name="vipStatus" value="no"/>Nie<br/>
+			</p>
+			<p>
+				<label>Posiłek:</label></br>
+				<input type="checkbox" name="foodOpt1" value="opt1"/>Przystawka<br/>
+				<input type="checkbox" name="foodOpt2" value="opt2"/>Obiad<br/>
+				<input type="checkbox" name="foodOpt3" value="opt3"/>Deser<br/>
+			</p>
+			<p>
+
+				<label>Dodatkowe uwagi:</label></br>
+				<textarea name="komentarz" placeholder="Wpisz tutaj"></textarea>
+			</p>
+			<p>
+
+				<input type="submit" value="Zarezerwuj"/>
+				<input type="reset" value="Anuluj"/>
+			</p>
+			
+		</form>
+	</body>
+</html>

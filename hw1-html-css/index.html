@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <h1>Dopisanie zgłoszenia reklamacyjnego</h1>
+        <form action="#" method="get">
+            <h2>Reklamujący</h2>
+            <input type="radio" name="gender" value="women" />Pani<br />
+            <input type="radio" name="gender" value="men" />Pan<br />
+            <p>
+                <label for="labelName">Imię</label>
+                <input type="text" id="labelName" name="name" placeholder="" required>
+            </p>
+            <p>
+                <label for="labelSurname">Nazwisko</label>
+                <input type="text" id="labelSurname" name="surname" placeholder="" required>
+            </p>
+            <p>
+                <label for="labelStreet">Ulica</label>
+                <input type="text" id="labelStreet" name="street" placeholder="" required>
+            </p>
+            <p>
+                <label for="labelPostCode">Kod pocztowy</label>
+                <input type="text" id="labelPostCode" name="postCode" placeholder="" required>
+            </p>
+            <p>
+                <label for="labelTown">Miejscowość</label>
+                <input type="text" id="labelTown" name="town" placeholder="" required>
+            </p>
+            <p>
+                <label for="labelPhone">Nr telefonu</label>
+                <input type="tel" id="labelPhone" name="phone" placeholder="" required>
+            </p>
+            <p>
+                <label for="labelEmail">Adres email</label>
+                <input type="email" id="labelEmail" name="email" placeholder="" required>
+            </p>
+            <p>
+                <label for="">Sposób powiadomienia</label>
+                <input type="checkbox" id="labelName" name="name" placeholder="" required>
+                <input type="checkbox" id="labelName" name="name" placeholder="" required>
+            </p>
+        </form>
+        <form action="#" method="get">
+            <h2>Reklamowany produkt</h2>
+            <p>
+                <label for="labelAssortment">Asortyment</label>
+                <select id="labelAssortment" name="assortment" required>
+                    <option value=""></option>
+                    <option value="product1">Produkt 1</option>
+                    <option value="product2">Produkt 2</option>
+                    <option value="product3">Produkt 3</option>
+                </select>
+            </p>
+            <p>
+                <label for="labelSerialNumber">Numer seryjny</label>
+                <input type="text" id="labelSerialNumber" name="serialNumber" placeholder="" required>
+            </p>
+            <p>
+                <label for="labelComments">Uwagi</label>
+                <input type="text" id="labelComments" name="comments" placeholder="" required>
+            </p>
+        </form>
+        <form action="#" method="get">
+            <h2>Dane zgłoszenia</h2>
+            <p>
+                <label for="labelPurchaseDocumentNumber">Numer dokumentu zakupu</label>
+                <input type="text" id="labelPurchaseDocumentNumber" name="purchaseDocumentNumber" placeholder=""
+                    required>
+            </p>
+            <p>
+                <label for="labelDateOfPurchase">Data zakupu</label>
+                <input type="date" id="labelDateOfPurchase" name="dateOfPurchase" placeholder="" required>
+            </p>
+            <p>
+                <label for="labelDefectDate">Data postania wady</label>
+                <input type="date" id="labelDefectDate" name="defectDate" placeholder="" required>
+            </p>
+            <p>
+                <label for="labelCauseOfComplaint">Przyczyna reklamacji</label>
+                <input type="text" id="labelCauseOfComplaint" name="causeOfComplaint" placeholder="" required>
+            </p>
+            <p>
+                <label for="labelDescriptionOfTheDefect">Opis wady</label>
+                <textarea type="text" id="labelDescriptionOfTheDefect" name="descriptionOfTheDefect" placeholder=""
+                    required></textarea>
+            </p>
+            <p>
+                <label for="labelAdvertisersRequest">Żądanie reklamującego</label>
+                <select id="labelAdvertisersRequest" name="advertisersRequest" required>
+                    <option value=""></option>
+                    <option value="option1">Opcja 1</option>
+                    <option value="option2">Opcja 2</option>
+                    <option value="option3">Opcja 3</option>
+                </select>
+            </p>
+        </form>
+    </main>
+</body>
+
+</html>

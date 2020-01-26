@@ -49,15 +49,19 @@
             </p>
             <p class="form1__notification-container">
                 <label for="labelName" class="form1__notification">Sposób powiadomienia</label>
-                <input type="checkbox" id="labelName" name="name" placeholder="" required>Telefon/SMS
-                <input type="checkbox" id="labelName" name="name" placeholder="" required>e-mail
+                <input class="form1__notification-checkbox" type="checkbox" id="labelName" name="name" placeholder=""
+                    required><span class="form1__notification-text">Telefon/SMS</span> <br />
+                <div class="form1__notification2-wrapper">
+                    <input class="form1__notification-checkbox" type="checkbox" id="labelName" name="name"
+                        placeholder="" required><span class="form1__notification-text">e-mail</span>
+                </div>
             </p>
         </form>
         <form class="form form2" action="#" method="get">
             <h2>Reklamowany produkt</h2>
             <p>
                 <label for="labelAssortment">Asortyment</label>
-                <select id="labelAssortment" name="assortment" required>
+                <select class="form2__products-list" id="labelAssortment" name="assortment" required>
                     <option value=""></option>
                     <option value="product1">Produkt 1</option>
                     <option value="product2">Produkt 2</option>
@@ -70,7 +74,7 @@
             </p>
             <p>
                 <label for="labelComments">Uwagi</label>
-                <input type="text" id="labelComments" name="comments" placeholder="" required>
+                <input class="form2__notes" type="text" id="labelComments" name="comments" placeholder="" required>
             </p>
         </form>
         <form class="form form3" action="#" method="get">

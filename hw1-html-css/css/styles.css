@@ -45,7 +45,7 @@ h2 {
     font-size: 26px;
 }
 
-p {
+p, .form1__notification-checkbox, .form1__notification-text {
     text-align: right;
     font-family: 'Poppins', sans-serif;
     color: #000000;
@@ -91,11 +91,9 @@ Form styles
 }
 
 /* ======================
-Input styles
+Form 1 styles - 
+complaint form
 ====================== */
-p, .form1__radio-container {
-    display: flex;
-}
 
 label {
     margin-right: 10px;
@@ -103,7 +101,7 @@ label {
     width: 250px;
 }
 
-input {
+input, .form2__products-list {
     border: 1px solid #b0c4de;
     border-radius: 4px;
     font-size: 18px;
@@ -111,7 +109,6 @@ input {
 }
 
 .form1__radio {
-
     font-size: 18px;
     margin-right: 0px;
     width: 15px;
@@ -124,3 +121,34 @@ input {
 .post-code {
     width: 100px;
 }
+
+p, .form1__radio-container, .form1__notification-container {
+    display: flex;
+}
+
+.form1__notification-checkbox {
+    width: 10px;
+}
+
+.form1__notification2-wrapper {
+    margin-left: 260px;
+}
+
+/* ======================
+Form 2 styles - 
+complaint product form
+====================== */
+
+.form2__products-list {
+    width: 400px;
+}
+
+.form2__notes {
+    width: 500px;
+}
+
+/* ======================
+Form 3 styles - 
+complaint product form
+====================== */
+

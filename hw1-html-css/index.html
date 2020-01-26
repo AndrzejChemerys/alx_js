@@ -13,10 +13,10 @@
 <body>
     <main>
         <h1>Dopisanie zgłoszenia reklamacyjnego</h1>
-        <form class="form form1" action="#" method="get" class="advertising">
+        <form class="form form1" action="#" method="get">
             <h2>Reklamujący</h2>
-            <input class="advertising__name--input" type="radio" name="gender" value="women" />Pani<br />
-            <input class="advertising__name--input" type="radio" name="gender" value="men" />Pan<br />
+            <input class="form1__radio form1__radio--women" type="radio" name="gender" value="women">Pani
+            <input class="form1__radio form1__radio--men" type="radio" name="gender" value="men" />Pan<br />
             <p>
                 <label for="labelName">Imię</label>
                 <input type="text" id="labelName" name="name" placeholder="" required>
@@ -31,7 +31,7 @@
             </p>
             <p>
                 <label for="labelPostCode">Kod pocztowy</label>
-                <input type="text" id="labelPostCode" name="postCode" placeholder="" required>
+                <input class="post-code" type="text" id="labelPostCode" name="postCode" placeholder="" required>
             </p>
             <p>
                 <label for="labelTown">Miejscowość</label>

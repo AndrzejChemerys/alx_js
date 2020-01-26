@@ -52,6 +52,17 @@ p {
     font-weight: sans-serif;
     font-weight: normal;
     font-size: 12px;
+    font-weight: bold;
+}
+
+.form1__radio {
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    font-weight: sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 /* ======================
@@ -59,7 +70,7 @@ Form styles
 ====================== */
 
 .form {
-    border: 1px red solid;
+    /* border: 1px red solid; */
     margin: 30px 40px;
     padding: 30px;
     background-color: #ffffff;
@@ -67,20 +78,46 @@ Form styles
 
 .form1 {
     border-left: 4px #007a00 solid;
+    box-shadow: 0px 10px 12px 0px rgba(153,153,153,1);
 }
-
 .form2 {
     border-left: 4px #8c8c8c solid;
+    box-shadow: 0px 6px 2px 0px rgba(153,153,153,1);
 }
 
 .form3 {
     border-left: 4px #306dff solid;
+    box-shadow: 0px 7px 10px 3px rgba(153,153,153,1);
 }
 
 /* ======================
 Input styles
 ====================== */
 
+label {
+    margin-right: 10px;
+}
+
 input {
     border: 1px solid #b0c4de;
+    border-radius: 4px;
+    font-size: 18px;
+    margin-right: 30vw;
+    width: 300px;
+}
+
+.form1__radio {
+
+    font-size: 18px;
+    margin-right: 0px;
+    width: 15px;
+}
+
+.form1__radio--women {
+    margin-left: 230px;
+}
+
+.post-code {
+    width: 100px;
+    margin-right: 40vw;
 }

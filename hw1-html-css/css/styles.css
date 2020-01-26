@@ -1,0 +1,86 @@
+/* ======================
+MAIN STYLES
+====================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ======================
+Font styles
+====================== */
+
+h1 {
+    margin: 50px auto;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    font-weight: normal;
+    font-size: 32px;
+}
+
+h2 {
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    color: #858282;
+    font-weight: lighter;
+    font-size: 26px;
+}
+
+p {
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    font-weight: sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+/* ======================
+Form styles
+====================== */
+
+.form {
+    border: 1px red solid;
+    margin: 30px 40px;
+    padding: 30px;
+    background-color: #ffffff;
+}
+
+.form1 {
+    border-left: 4px #007a00 solid;
+}
+
+.form2 {
+    border-left: 4px #8c8c8c solid;
+}
+
+.form3 {
+    border-left: 4px #306dff solid;
+}
+
+/* ======================
+Input styles
+====================== */
+
+input {
+    border: 1px solid #b0c4de;
+}

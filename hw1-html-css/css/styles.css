@@ -93,16 +93,20 @@ Form styles
 /* ======================
 Input styles
 ====================== */
+p, .form1__radio-container {
+    display: flex;
+}
 
 label {
     margin-right: 10px;
+    display: block;
+    width: 250px;
 }
 
 input {
     border: 1px solid #b0c4de;
     border-radius: 4px;
     font-size: 18px;
-    margin-right: 30vw;
     width: 300px;
 }
 
@@ -114,10 +118,9 @@ input {
 }
 
 .form1__radio--women {
-    margin-left: 230px;
+    margin-left: 260px;
 }
 
 .post-code {
     width: 100px;
-    margin-right: 40vw;
 }

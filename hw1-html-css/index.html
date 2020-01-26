@@ -15,8 +15,10 @@
         <h1>Dopisanie zgłoszenia reklamacyjnego</h1>
         <form class="form form1" action="#" method="get">
             <h2>Reklamujący</h2>
-            <input class="form1__radio form1__radio--women" type="radio" name="gender" value="women">Pani
-            <input class="form1__radio form1__radio--men" type="radio" name="gender" value="men" />Pan<br />
+            <div class="form1__radio-container">
+                <input class="form1__radio form1__radio--women" type="radio" name="gender" value="women">Pani
+                <input class="form1__radio form1__radio--men" type="radio" name="gender" value="men" />Pan<br />
+            </div>
             <p>
                 <label for="labelName">Imię</label>
                 <input type="text" id="labelName" name="name" placeholder="" required>
@@ -45,10 +47,10 @@
                 <label for="labelEmail">Adres email</label>
                 <input type="email" id="labelEmail" name="email" placeholder="" required>
             </p>
-            <p>
-                <label for="">Sposób powiadomienia</label>
-                <input type="checkbox" id="labelName" name="name" placeholder="" required>
-                <input type="checkbox" id="labelName" name="name" placeholder="" required>
+            <p class="form1__notification-container">
+                <label for="labelName" class="form1__notification">Sposób powiadomienia</label>
+                <input type="checkbox" id="labelName" name="name" placeholder="" required>Telefon/SMS
+                <input type="checkbox" id="labelName" name="name" placeholder="" required>e-mail
             </p>
         </form>
         <form class="form form2" action="#" method="get">

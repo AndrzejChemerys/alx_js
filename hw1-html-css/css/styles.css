@@ -43,6 +43,7 @@ h2 {
     color: #858282;
     font-weight: lighter;
     font-size: 26px;
+    margin-bottom:20px;
 }
 
 p, .form1__notification-checkbox, .form1__notification-text {
@@ -99,9 +100,10 @@ label {
     margin-right: 10px;
     display: block;
     width: 250px;
+    line-height: 25px;
 }
 
-input, .form2__products-list {
+input, .form2__products-list, .complaint-data__description, .complaint-data__request {
     border: 1px solid #b0c4de;
     border-radius: 4px;
     font-size: 18px;
@@ -149,6 +151,26 @@ complaint product form
 
 /* ======================
 Form 3 styles - 
-complaint product form
+complaint data form
 ====================== */
 
+.complaint-data__number {
+    width: 200px;
+}
+
+.complaint-data__date-of-purchase, .complaint-data__date-of-break {
+    width: 150px;
+}
+
+.complaint-data__reason {
+    width: 500px;
+}
+
+.complaint-data__description {
+    width: 500px;
+    height: 60px;
+}
+
+.complaint-data__request {
+    width: 400px;
+}

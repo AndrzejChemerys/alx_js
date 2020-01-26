@@ -81,29 +81,29 @@
             <h2>Dane zgłoszenia</h2>
             <p>
                 <label for="labelPurchaseDocumentNumber">Numer dokumentu zakupu</label>
-                <input type="text" id="labelPurchaseDocumentNumber" name="purchaseDocumentNumber" placeholder=""
+                <input class="complaint-data__number" type="text" id="labelPurchaseDocumentNumber" name="purchaseDocumentNumber" placeholder=""
                     required>
             </p>
             <p>
                 <label for="labelDateOfPurchase">Data zakupu</label>
-                <input type="date" id="labelDateOfPurchase" name="dateOfPurchase" placeholder="" required>
+                <input class="complaint-data__date-of-purchase" type="text" id="labelDateOfPurchase" name="dateOfPurchase" placeholder="" required>
             </p>
             <p>
                 <label for="labelDefectDate">Data postania wady</label>
-                <input type="date" id="labelDefectDate" name="defectDate" placeholder="" required>
+                <input class="complaint-data__date-of-break" type="text" id="labelDefectDate" name="defectDate" placeholder="" required>
             </p>
             <p>
                 <label for="labelCauseOfComplaint">Przyczyna reklamacji</label>
-                <input type="text" id="labelCauseOfComplaint" name="causeOfComplaint" placeholder="" required>
+                <input class="complaint-data__reason" type="text" id="labelCauseOfComplaint" name="causeOfComplaint" placeholder="" required>
             </p>
             <p>
                 <label for="labelDescriptionOfTheDefect">Opis wady</label>
-                <textarea type="text" id="labelDescriptionOfTheDefect" name="descriptionOfTheDefect" placeholder=""
+                <textarea class="complaint-data__description" type="text" id="labelDescriptionOfTheDefect" name="descriptionOfTheDefect" placeholder=""
                     required></textarea>
             </p>
             <p>
                 <label for="labelAdvertisersRequest">Żądanie reklamującego</label>
-                <select id="labelAdvertisersRequest" name="advertisersRequest" required>
+                <select class="complaint-data__request" id="labelAdvertisersRequest" name="advertisersRequest" required>
                     <option value=""></option>
                     <option value="option1">Opcja 1</option>
                     <option value="option2">Opcja 2</option>

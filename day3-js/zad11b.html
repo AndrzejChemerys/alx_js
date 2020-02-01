@@ -1,0 +1,47 @@
+<script>
+	
+var a = 250;
+var b = 140;
+var c = 50;
+
+var numMax;
+var numMin;
+var numMid;
+
+if (a>b&&a>c) {
+	numMax = a;
+} 
+
+if (b>a&&b>c) {
+	numMax = b;
+} 
+
+if (c>a&&c>b) {
+	numMax = c;
+}
+
+if (a<b&&a<c) {
+	numMin = a;
+} 
+
+if (b<a&&b<c) {
+	numMin = b;
+} 
+
+if (c<a&&c<b) {
+	numMin = c;
+}
+
+if ((a==numMax||b==numMax)&&(a==numMin||b==numMin)){
+	numMid=c;
+}
+else if ((a==numMax||c==numMax)&&(a==numMin||c==numMin)){
+	numMid=b;
+}
+else if ((c==numMax||b==numMax)&&(c==numMin||b==numMin)){
+	numMid=a;
+}
+
+console.log(numMax+" "+numMid+" "+numMin);
+
+</script>

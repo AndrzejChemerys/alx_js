@@ -1,0 +1,36 @@
+<script>
+	
+var num1 = parseInt(prompt("Podaj liczbe numer 1: "));
+console.log(num1, typeof(num1));
+
+var num2 = parseInt(prompt("Podaj liczbe numer 2: "));
+console.log(num2, typeof(num2));
+
+var action = (prompt("Podaj działanie (+ - * /): "));
+console.log(action, typeof(action));
+
+switch(action){
+	case '+':
+		sum=num1+num2;
+	break;
+	case '-':
+		sum=num1-num2;
+	break;
+	case '*':
+		sum=num1*num2;
+	break;
+	case '/':
+		if(num2==0){
+			sum="Dzielenie na zero";
+		} else {
+			sum=num1/num2;
+		}
+		
+	break;
+	default:
+		console.log("Nie ma takiego działania");
+}
+
+console.log("Rezultat: "+sum);
+
+</script>

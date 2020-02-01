@@ -1,0 +1,30 @@
+<script>
+	
+var waga;
+var wzrost;
+var bmi;
+
+var waga2;
+
+waga = 100;
+wzrost =1.76;
+
+
+
+bmi = (waga/(wzrost**2));
+
+if(bmi<=24.9&&bmi>=18.5){
+	console.log("Waga prawidłowa");
+} else if (bmi<18.5){
+	console.log("Niedowaga");
+} else if (bmi>24.9) {
+	console.log("Nadwaga");
+}
+
+waga2=24.9*(wzrost**2);
+var wagaDoZrzucenia=waga2-waga;
+
+console.log(bmi);
+console.log(wagaDoZrzucenia);
+
+</script>

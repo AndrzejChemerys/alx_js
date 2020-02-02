@@ -1,0 +1,26 @@
+<script>
+
+var luckyNum = Math.floor((Math.random()*100)+1);
+console.log(luckyNum);
+//alert(luckyNum);
+var counter=0;
+
+while(true){
+
+	playerNum = parseInt(prompt("Podaj liczbe numer: "));
+	console.log("Podana liczba to: "+playerNum+", Typ: "+typeof(playerNum));
+	counter++;
+	
+	if(playerNum>luckyNum){
+		alert('Podałeś za dużą liczbe');
+		continue;
+	} else if(playerNum<luckyNum) {
+		alert('Podałeś za małą liczbe');
+		continue;
+	} else if(playerNum==luckyNum){
+		alert("Wygrałeś! Iłość prób: "+counter);	
+		break;
+	}	
+}
+
+</script> 

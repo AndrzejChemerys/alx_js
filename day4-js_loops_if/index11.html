@@ -1,0 +1,24 @@
+<script>
+
+var num;
+var sum=0;
+var avg=0;
+var count=-1;
+
+while(true){
+	num = parseInt(prompt("Podaj liczbe numer: "));
+	console.log("Podana liczba to: "+num+", Typ: "+typeof(num));
+	sum=sum+num;
+	count++;
+	avg=sum/count;
+	
+	if(num==0){
+		break;
+	}
+}
+
+	console.log("Suma: "+sum);
+	console.log("Iłość liczb bez 0: "+count);
+	console.log("Średnia to: "+avg);
+	
+</script> 

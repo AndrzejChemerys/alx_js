@@ -1,0 +1,43 @@
+
+<script>
+
+while(true){
+
+	var luckyNum = Math.floor((Math.random()*100)+1);
+	console.log(luckyNum);
+	//alert(luckyNum);
+	var counter=0;
+
+	for(i=1;i<=5;i++){
+		playerNum = parseInt(prompt("Podaj liczbe numer: "));
+		console.log("Podana liczba to: "+playerNum+", Typ: "+typeof(playerNum));
+		counter++;
+		
+		if(playerNum>luckyNum){
+			alert('Podałeś za dużą liczbe');
+			continue;
+		} else if(playerNum<luckyNum) {
+			alert('Podałeś za małą liczbe');
+			continue;
+		} else if(playerNum==luckyNum){
+			alert("Wygrałeś! Iłość prób: "+counter);	
+			break;
+		}	
+	} 
+	
+	if(i==6) {
+		alert("Przegrałeś: "+counter);
+	}
+
+	var playerEnd = prompt("Czy chcesz grać dałej? T-tak lub N-nie ");
+	console.log("Podana wartość to: "+playerEnd+", Typ: "+typeof(playerEnd));
+
+	if(playerEnd=="T" || playerEnd=="t"){
+		continue;
+	} else if (playerEnd=="N" || playerEnd=="n") {
+		break;
+	} else {
+		break;
+	}
+}
+</script> 

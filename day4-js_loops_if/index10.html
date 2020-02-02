@@ -1,0 +1,22 @@
+<script>
+
+var liczba = Math.floor((Math.random()*10)+1);
+
+while(liczba!=6){
+	liczba = Math.floor((Math.random()*10)+1);
+	if (liczba != 6){
+		document.write("Wylosowana liczba to "+liczba+" losuj dalej.");
+		document.write("<br/>");
+	}
+}
+
+/*
+while((liczba = Math.floor((Math.random()*10)+1)) !=6){
+	document.write("Wylosowana liczba to "+liczba+" losuj dalej.");
+	document.write("<br/>");
+}
+*/
+
+document.write("Koniec, jest "+liczba);
+
+</script> 

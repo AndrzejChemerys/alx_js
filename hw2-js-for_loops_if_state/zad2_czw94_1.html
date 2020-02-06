@@ -13,12 +13,6 @@
     var countLetters = 1;
 
     for (i = 0; i < inputWord.length; i++) {
-        //wyświetlenie do konsoli wynniku po jednej iteracji dla jednej litery [i];
-        if (countLetters > 1) {
-            console.log('Litera ' + inputWord[i] + ' występuje ' + countLetters + ' razy');
-        } else {
-            console.log('Litera ' + inputWord[i] + ' występuje ' + countLetters + ' raz');
-        }
         //reset licznika liter do 0
         countLetters = 0;
         tempLetter = inputWord[i];
@@ -27,6 +21,12 @@
             if (tempLetter === inputWord[j]) {
                 countLetters++;
             }
+        }
+        //wyświetlenie do konsoli wynniku po jednej iteracji dla jednej litery [i];
+        if (countLetters > 1) {
+            console.log('Litera ' + inputWord[i] + ' występuje ' + countLetters + ' razy');
+        } else {
+            console.log('Litera ' + inputWord[i] + ' występuje ' + countLetters + ' raz');
         }
     }
 </script>

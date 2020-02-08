@@ -1,0 +1,21 @@
+<script>
+let cars=["BMW", "AUDI"];
+let models_BMW=["X1","X2","X3"]
+let models_AUDI=["A1","B2","C3"]
+let tmp = "";
+let model;
+
+for(let model of cars) {
+	if (model=="BMW") {
+		for(let car of models_BMW) {
+			tmp += car + " ";
+		}
+	} else if (model=="AUDI") {
+		tmp = "";
+		for(let car of models_AUDI) {
+			tmp += car + " ";
+		}
+	}	
+	console.log(model, tmp);
+}
+</script>

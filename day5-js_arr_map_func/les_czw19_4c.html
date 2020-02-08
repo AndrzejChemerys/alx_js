@@ -1,0 +1,26 @@
+<script>
+	let los = [];
+	let liczba;
+	let numMax;
+	let numMin;
+
+	for (let i = 0; i < 10; i++) {
+		liczba = Math.floor((Math.random() * 100 + 1));
+		los.push(liczba);
+	}
+
+	numMax = los[0];
+	numMin = los[0];
+
+	for (num of los) {
+		if (num > numMax) {
+			numMax = num;
+		}
+		if (num < numMin) {
+			numMin = num;
+		}
+	}
+
+	console.log("Tablica - " + los);
+	console.log("Max - " + numMax + ", Min - " + numMin);
+</script>

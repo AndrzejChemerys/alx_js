@@ -1,0 +1,38 @@
+<script>
+let los=[];
+let liczba;
+let sameNum = [];
+let found;
+
+for(let i=0; i<10; i++) {
+	liczba=Math.floor((Math.random()*10+1));
+	los.push(liczba);
+}
+
+for(let i=0; i<los.length; i++){
+	for (let j=i+1; j<los.length; j++) {
+		found=false;
+		if (los[i] == los[j]) {
+			found=true;
+				break;
+		}
+	}
+		
+	if(found==true){
+	
+		found=false;
+		for (let x=0; x<sameNum.length; x++) {
+			if(sameNum[x]==los[i]){
+				found=true;
+			}
+		}			
+		
+		if(found == false){
+			sameNum.push(los[i]);
+		}
+	}
+}
+
+console.log("Tablica - "+ los);
+console.log("Dublikaty - "+ sameNum);
+</script>

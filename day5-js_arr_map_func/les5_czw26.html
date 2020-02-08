@@ -1,44 +1,44 @@
 <script>
-let tab1=[];
-let tab2=[];
-let liczba;
-let sameNum = [];
-let found;
+	let tab1 = [];
+	let tab2 = [];
+	let liczba;
+	let sameNum = [];
+	let found;
 
-// Funkcja do wypelnienia pustej tablicy i wyświetlenia jej w konsoli
-createArray =(arr)=>{
-	for(let i=0; i<10; i++) {
-		liczba=Math.floor((Math.random()*10+1));
-		arr.push(liczba);
+	// Funkcja do wypelnienia pustej tablicy i wyświetlenia jej w konsoli
+	createArray = (arr) => {
+		for (let i = 0; i < 10; i++) {
+			liczba = Math.floor((Math.random() * 10 + 1));
+			arr.push(liczba);
+		}
+		console.log(arr);
 	}
-	console.log(arr);
-}
 
-createArray (tab1);
-createArray (tab2);
+	createArray(tab1);
+	createArray(tab2);
 
-//Porównanie elementów dwóch tablic
-for(let i=0; i<tab1.length; i++){
-	for (let j=0; j<tab2.length; j++) {
-		found=false;
-		if (tab1[i] == tab2[j]) {
-			found=true;
+	//Porównanie elementów dwóch tablic
+	for (let i = 0; i < tab1.length; i++) {
+		for (let j = 0; j < tab2.length; j++) {
+			found = false;
+			if (tab1[i] == tab2[j]) {
+				found = true;
 				break;
-		}
-	}
-	
-//Jeżeli elementy są takie same to sprawdzamy czy taki element już jest w tablicy dublikatów
-	if(found==true){
-		found=false;
-		for (let x=0; x<sameNum.length; x++) {
-			if(sameNum[x]==tab1[i]){
-				found=true;
 			}
-		}			
-		if(found == false){
-			sameNum.push(tab1[i]);
+		}
+
+		//Jeżeli elementy są takie same to sprawdzamy czy taki element już jest w tablicy dublikatów
+		if (found == true) {
+			found = false;
+			for (let x = 0; x < sameNum.length; x++) {
+				if (sameNum[x] == tab1[i]) {
+					found = true;
+				}
+			}
+			if (found == false) {
+				sameNum.push(tab1[i]);
+			}
 		}
 	}
-}
-console.log("Dublikaty - "+ sameNum);
+	console.log("Dublikaty - " + sameNum);
 </script>

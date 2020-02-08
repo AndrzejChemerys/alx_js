@@ -1,0 +1,32 @@
+<script>
+let tab = [];
+
+let inputName;
+let inputSurname;
+let inputPhone;
+
+while(true){
+	inputName = prompt("Podaj imie: ");
+	console.log("Podane imie to: " + inputName + ", Typ: " + typeof (inputName));
+
+	inputSurname = prompt("Podaj nazwisko: ");
+	console.log("Podane nazwisko to: " + inputSurname + ", Typ: " + typeof (inputSurname));
+
+	inputPhone = prompt("Podaj numer: ");
+	console.log("Podane numer to: " + inputPhone + ", Typ: " + typeof (inputPhone));
+	
+	if ((inputName=="" && inputSurname=="" && inputPhone=="") || (inputName=="" || inputSurname=="" || inputPhone=="")) {
+		break;
+	} else {
+		tab.push([inputName, inputSurname, inputPhone]);
+	}
+}
+
+for(let dane of tab){
+	document.write(`Imię: ${dane[0]}, Nazwisko: ${dane[1]}, Numer: ${dane[2]}`);
+	document.write("<br/>");
+	console.log(`Imię: ${dane[0]}, Nazwisko: ${dane[1]}, Numer: ${dane[2]}`);
+}
+
+
+</script>

@@ -1,0 +1,21 @@
+<script>
+    let inputData1;
+    let inputData2;
+
+    let map = new Map();
+
+    map.set("jeden", 1);
+    map.set("dwa", 2);
+    map.set("trzy", 3);
+    map.set("cztery", 4);
+    map.set("pięć", 5);
+
+    inputData1 = prompt("Podaj dane: ");
+    console.log("Podane dane to: " + inputData1 + ", Typ: " + typeof (inputData1));
+
+    inputData2 = prompt("Podaj dane: ");
+    console.log("Podane dane to: " + inputData2 + ", Typ: " + typeof (inputData2));
+
+    let sum = map.get(inputData1) + map.get(inputData2);
+    console.log(sum);
+</script>

@@ -1,0 +1,25 @@
+<script>
+	var zmienna1 = "programista";
+	var zmienna2 = "javascript";
+	var commonLetters = "";
+	var commonLettersShort = "";
+	
+    for (i = 0; i < zmienna1.length; i++) {
+        for (j = 0; j < zmienna2.length; j++) {
+			if (zmienna1[i]==zmienna2[j]) {
+				
+				var found=false;
+				for (var x=0; x<commonLetters.length; x++) {
+					if(commonLetters[x]==zmienna1[i]) {
+						found=true;
+						break;
+					}  
+				}
+				if(found==false){
+					commonLetters+=zmienna1[i];
+				}
+			}
+		}
+	}
+	console.log(commonLetters);		
+</script>

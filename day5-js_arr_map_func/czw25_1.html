@@ -1,0 +1,22 @@
+<script>
+	let tab = [
+		[0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0]
+	];
+
+	for (let i = 0; i < 5; i++) {
+		tab[i][4 - i] = 1;
+	}
+
+	for (let x of tab) {
+		for (let y of x) {
+			document.write(y + " ");
+		}
+		document.write("<br/>");
+	}
+
+	console.log(tab);
+</script>

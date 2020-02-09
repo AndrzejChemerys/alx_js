@@ -1,15 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-
 	document.querySelector("input[type='button']").addEventListener('click', function () {
 		wyslij();
 	});
-
 });
 
 checkInput = (el, validate) => {
-
 	if (validate == true) {
-
 		if (el == "") {
 			alert("Wszystkie pola muszą być wypełnione!");
 			return false;

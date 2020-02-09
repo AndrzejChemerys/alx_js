@@ -1,0 +1,14 @@
+<script>
+	let zb = new Set();
+
+	do {
+		liczba = Math.floor((Math.random() * 10 + 1));
+		zb.add(liczba);
+	} while (zb.size < 6);
+
+	document.write("Elementy zbioru to : <br/>");
+
+	for (elem of zb) {
+		document.write(elem + " ");
+	}
+</script>

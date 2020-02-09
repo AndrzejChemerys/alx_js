@@ -1,0 +1,33 @@
+<script>
+	let shop = new Map();
+	shop.set("chleb", 2.50);
+	shop.set("sok", 1.50);
+	shop.set("woda", 3.50);
+
+	let basket = [];
+	//let basket=new Map();
+
+	let toPay = 0;
+
+	while (true) {
+		let product = prompt("Podaj nazwe produktu który chcesz kupić: ");
+		console.log("Podane dane to: " + product + ", Typ: " + typeof (product));
+		if (product == "") {
+			break;
+		} else {
+			if (shop.has(product) == true) {
+				basket.push(product);
+			} else {
+				alert("Brak produktu!");
+			}
+		}
+	}
+	document.write("<h2>Podsumowanie Twoich zakupów:</h2>");
+	for (let item of basket) {
+		document.write(item + " - ");
+		document.write(shop.get(item));
+		document.write("<br/>");
+		toPay += shop.get(item);
+	}
+	document.write("<h3>Razem do zapłaty: " + toPay + "</h3>");
+</script>

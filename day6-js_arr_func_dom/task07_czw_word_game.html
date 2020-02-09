@@ -1,0 +1,45 @@
+<script>
+	let inputPassword;
+	let inputLetter;
+	let showWord = "";
+
+	win = () => {
+		console.log(showWord + " - to było szukane hasło! Wygrałeś!");
+	}
+
+	let letSet = new Set();
+
+	inputPassword = prompt("Podaj hasło: ");
+	console.log("// Podane hasło to: " + inputPassword + ", Typ: " + typeof (inputPassword));
+
+	while (true) {
+		inputLetter = prompt("Podaj litere: ");
+		console.log("// Podana litera to: " + inputLetter + ", Typ: " + typeof (inputLetter));
+
+		if (inputLetter == inputPassword) {
+			showWord = inputLetter;
+			win();
+			break;
+		} else {
+			letSet.add(inputLetter);
+
+			for (elemPass of inputPassword) {
+				if (letSet.has(elemPass)) {
+					showWord += elemPass;
+				} else {
+					showWord += "*";
+				}
+			}
+
+			if (showWord == inputPassword) {
+				win();
+				break;
+			} else if (inputLetter == "0") {
+				break;
+			} else {
+				console.log(showWord);
+				showWord = "";
+			}
+		}
+	}
+</script>

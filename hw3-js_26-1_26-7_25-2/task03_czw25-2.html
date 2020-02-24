@@ -1,16 +1,16 @@
 <script>
-//####################################
-// Zadanie domowe 3.3 - ćwiczenie 25_2
-// Andrii Chemerys
-// Warszawa, 24-02-2020r.
-//####################################
+	//####################################
+	// Zadanie domowe 3.3 - ćwiczenie 25_2
+	// Andrii Chemerys
+	// Warszawa, 24-02-2020r.
+	//####################################
 
 	let inputPassword;
 	let inputLetter;
 	let showWord = "";
 	let letSet = new Set();
 	let i = 0;
-	const tryNum = 5; 
+	const tryNum = 5;
 
 	win = () => {
 		console.log(showWord + " - to było szukane hasło! Wygrałeś!");
@@ -49,10 +49,9 @@
 			}
 		}
 		i++;
-	} while (i<tryNum);
-	
-	if (i>tryNum-1) {
+	} while (i < tryNum);
+
+	if (i > tryNum - 1) {
 		console.log("Więcej szczęścia następnym razem!");
 	}
-	
 </script>

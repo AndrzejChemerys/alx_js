@@ -1,0 +1,73 @@
+<script>
+    //####################################
+    // Zadanie domowe 3.2 - ćwiczenie 26_7
+    // Andrii Chemerys
+    // Warszawa, 24-02-2020r.
+    //####################################
+
+    let el = "-";
+    let x, y;
+    let tab = [
+        [el, el, el],
+        [el, el, el],
+        [el, el, el]
+    ];
+    let playerSwitch;
+    let winner = false;
+
+    inputCoordinates = (player) => {
+        wsp = prompt(`Gracz >> ${player} << podaj współrzędne od 0 do 2: `);
+        x = parseInt(wsp[0]);
+        y = parseInt(wsp[1]);
+        if ((x <= 2 && x >= 0) && (y <= 2 && y >= 0)) {
+            tab[x][y] = player;
+        }
+    }
+
+    roundPlayed = () => {
+        playerSwitch = "x";
+        inputCoordinates(playerSwitch);
+        playerSwitch = "o";
+        inputCoordinates(playerSwitch);
+    }
+
+    renderXO = () => {
+        for (let i of tab) {
+            for (let j of i) {
+                document.write(j + " ");
+            }
+            document.write("<br/>");
+        }
+    }
+
+    checkXwin = () => {
+        if (tab[0][0] == "x" && tab[0][1] == "x" && tab[0][2] == "x" || tab[1][0] == "x" && tab[1][1] == "x" && tab[1][2] == "x" || tab[2][0] == "x" && tab[2][1] == "x" && tab[2][2] == "x" || tab[0][0] == "x" && tab[1][0] == "x" && tab[2][0] == "x" || tab[0][1] == "x" && tab[1][1] == "x" && tab[2][1] == "x" || tab[0][2] == "x" && tab[1][2] == "x" && tab[2][2] == "x" || tab[0][0] == "x" && tab[1][1] == "x" && tab[2][2] == "x" || tab[2][0] == "x" && tab[1][1] == "x" && tab[0][2] == "x") {
+            console.log("player X win");
+            document.write('player X win');
+            winner = "x";
+        } 
+    }
+
+    checkOwin = () => {
+        if (tab[0][0] == "o" && tab[0][1] == "o" && tab[0][2] == "o" || tab[1][0] == "o" && tab[1][1] == "o" && tab[1][2] == "o" || tab[2][0] == "o" && tab[2][1] == "o" && tab[2][2] == "o" || tab[0][0] == "o" && tab[1][0] == "o" && tab[2][0] == "o" || tab[0][1] == "o" && tab[1][1] == "o" && tab[2][1] == "o" || tab[0][2] == "o" && tab[1][2] == "o" && tab[2][2] == "o" || tab[0][0] == "o" && tab[1][1] == "o" && tab[2][2] == "o" || tab[2][0] == "o" && tab[1][1] == "o" && tab[0][2] == "o") {
+            console.log("player O win");
+            document.write('player O win');
+            winner = "o";
+        } 
+    }
+
+    clearRenderArr = () => {
+        document.write('');
+    }
+
+    do {
+        roundPlayed();
+        checkXwin();
+        checkOwin();
+        console.log(tab);
+    } while (winner == false);
+
+    clearRenderArr();
+    renderXO();
+   
+</script>

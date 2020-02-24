@@ -1,0 +1,32 @@
+<script>
+    //####################################
+    // Zadanie domowe 3.1 - ćwiczenie 26_1
+    // Andrii Chemerys
+    // Warszawa, 24-02-2020r.
+    //####################################
+
+    let numArr = [];
+    let numMax;
+    let numMin;
+    let numRandom;
+
+    do {
+        numRandom = Math.floor((Math.random() * 100 + 1));
+        numArr.push(numRandom);
+    } while (numArr.length < 10);
+
+    numMax = numArr[0];
+    numMin = numArr[0];
+    document.write("Elementy tablicy to : <br/>");
+
+    for (numElem of numArr) {
+        if (numElem > numMax) {
+            numMax = numElem;
+        };
+        if (numElem < numMin) {
+            numMin = numElem;
+        }
+        document.write(numElem + " ");
+    }
+    document.write(`Maksymalna liczba - ${numMax}, a minimalna - ${numMin}`);
+</script>

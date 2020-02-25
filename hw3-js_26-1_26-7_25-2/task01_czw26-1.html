@@ -2,31 +2,33 @@
     //####################################
     // Zadanie domowe 3.1 - ćwiczenie 26_1
     // Andrii Chemerys
-    // Warszawa, 24-02-2020r.
+    // Warszawa, 25-02-2020r.
     //####################################
 
     let numArr = [];
-    let numMax;
-    let numMin;
     let numRandom;
+    let numTemp;
 
     do {
         numRandom = Math.floor((Math.random() * 100 + 1));
         numArr.push(numRandom);
     } while (numArr.length < 10);
 
-    numMax = numArr[0];
-    numMin = numArr[0];
-    document.write("Elementy tablicy to : <br/>");
+    //test
+    // numArr = [3, 2, 1, 5]
+    // console.log(numArr);
+    document.write(`Elementy tablicy to: <br/> ${numArr}`);
 
-    for (numElem of numArr) {
-        if (numElem > numMax) {
-            numMax = numElem;
-        };
-        if (numElem < numMin) {
-            numMin = numElem;
+    for (let i = 0; i < numArr.length; i++)
+        for (let j = 0; j < numArr.length; j++) {
+            if (numArr[j] > numArr[j + 1]) {
+                // console.log(numTemp + " porownanie  " + numArr[j], numArr[j + 1])
+                numTemp = numArr[j];
+                numArr[j] = numArr[j + 1];
+                numArr[j + 1] = numTemp;
+                // console.log(numTemp + " zmiana " + numArr[j], numArr[j + 1])
+                // console.log(numArr);
+            }
         }
-        document.write(numElem + " ");
-    }
-    document.write(`Maksymalna liczba - ${numMax}, a minimalna - ${numMin}`);
+    document.write(`<br/> Posortowana tablica: <br/> ${numArr}`);
 </script>

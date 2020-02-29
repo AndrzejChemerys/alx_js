@@ -63,11 +63,10 @@ for (let i of koszyki) {
 		document.write(`Produkt: ${j} - ${i.zakupy.get(j)} szt. - ${sklep.get(j)} zł - ${sklep.get(j) * i.zakupy.get(j)} zł <br/>`);
 		doZaplaty+=sklep.get(j) * i.zakupy.get(j);
 	}
-	klientNr++;
-	
+	klientNr++;	
 }
-document.write(`Razem do zapłaty: ${doZaplaty} zł.`);
 
+document.write(`Razem do zapłaty: ${doZaplaty} zł.`);
 
 </script>
 

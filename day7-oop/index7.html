@@ -1,0 +1,82 @@
+<script>
+
+class Student {
+	
+	constructor(imie, nazwisko, nrIndexu, oceny) {
+		this.imie = imie;
+		this.nazwisko = nazwisko;
+		this.nrIndexu = nrIndexu;
+		this.oceny = [];
+	}
+	
+	avgScore() {
+		let summ = 0;
+		for(let i of this.oceny) {
+			summ+=i;
+		}
+		return summ/this.oceny.length;
+	}
+}
+
+uczelnia = [];
+start = true;
+
+while(start) {
+	dec = prompt('D-dodaj, O-ocena, U-usuń, P-pokaz, K-koniec').toUpperCase();
+		
+	switch(dec) {
+	  case "D":
+		let stName = prompt('Podaj imie studenta');
+		let stSurname = prompt('Podaj nazwisko studenta');
+		let stIdNum = prompt('Podaj nr indeksu studenta');
+		student = new Student(stName, stSurname, stIdNum);
+		uczelnia.push(student);
+		console.log(uczelnia);
+		for(z of uczelnia) {
+			document.write(z);
+		}
+		break;
+		
+	  case "O":
+		let stIdNumScore = prompt('Podaj nr indeksu studenta');
+		let stScore = parseInt(prompt('Podaj ocene'));
+		for (let i of uczelnia) {
+			if (stIdNumScore == i.nrIndexu) {
+				i.oceny.push(stScore);
+				document.write(uczelnia);
+			}
+		}
+		console.log(uczelnia);
+		break;
+		
+	  case "U":
+		let stIdNumDelete = prompt('Podaj nr indeksu studenta');
+		for (let j in uczelnia) {
+			if (stIdNumDelete == uczelnia[j].nrIndexu) {
+				uczelnia.splice(j, 1);
+			}
+		}
+		console.log(uczelnia);
+		break;
+	  case "P":	
+		for (let x of uczelnia) {
+			console.log(x.avgScore());
+		}		
+		break;
+	  case "K":
+		start = false;
+		break;
+		
+	  default:
+		//
+	}
+}
+
+
+</script>
+
+
+
+
+
+

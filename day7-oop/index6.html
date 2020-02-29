@@ -1,0 +1,77 @@
+<script>
+
+class Koszyk {
+	
+	constructor() {
+		this.zakupy = new Map();
+	}
+	
+	add(produkt, ilosc){
+		this.zakupy.set(produkt, ilosc);
+	}
+	
+	show() {
+		for(let item of this.zakupy.keys()) {
+			console.log(item, this.zakupy.get(item));
+		}
+	}
+}
+
+const koszyki = [];
+
+let sklep = new Map();
+sklep.set("sok", 2.5);
+sklep.set("woda", 3.5);
+sklep.set("piwo", 4);
+
+do {
+	const koszyczek = new Koszyk();
+	while(true) {
+	produkt = prompt("Podaj produkt: ");
+		if (produkt == "") {
+			koszyki.push(koszyczek);
+			break;
+		} else if (sklep.has(produkt) == true) {
+			ilosc = parseInt(prompt("Podaj ilosc: "));
+			if (koszyczek.zakupy.has(produkt)) {
+				console.log("Kolejny sok!");
+				ilosc+=koszyczek.zakupy.get(produkt);
+				
+			} else {
+				console.log("Dodano sok");
+				koszyczek.add(produkt, ilosc);
+			}
+			koszyczek.add(produkt, ilosc);
+		} else {
+			alert("Brak produktu w sklepie!");
+		}
+	}
+	
+	klient = prompt("Nowy klient? T/N").toUpperCase();
+	
+} while (klient == "T")
+console.log(koszyki);
+
+document.write("Zakupy: <br/>");
+
+let klientNr = 1;
+let doZaplaty = 0;
+
+for (let i of koszyki) {
+	document.write(`Podsumowanie klienta nr ${klientNr} <br/>`);
+	for (j of i.zakupy.keys()) {
+		document.write(`Produkt: ${j} - ${i.zakupy.get(j)} szt. - ${sklep.get(j)} zł - ${sklep.get(j) * i.zakupy.get(j)} zł <br/>`);
+	}
+	klientNr++;
+	doZaplaty+=sklep.get(j) * i.zakupy.get(j);
+}
+document.write(`Razem do zapłaty: ${doZaplaty} zł.`);
+
+
+</script>
+
+
+
+
+
+

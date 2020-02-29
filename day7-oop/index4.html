@@ -1,0 +1,30 @@
+<script>
+
+class Car {
+	
+	constructor(marka, model, silnik, paliwo, kolor) {
+		this.marka = marka;
+		this.model = model;
+		this.silnik = silnik;
+		this.paliwo = paliwo;
+		this.kolor = kolor;
+	}
+	
+	showDetails(){
+		console.log(`Marka: ${this.marka}, Model: ${this.model}, Silnik: ${this.silnik}, Paliwo: ${this.paliwo}, Kolor: ${this.kolor}`);
+	}
+}
+
+audi = new Car("Audi", "A5", 3, 'diesel', "bialy");
+porshe = new Car("Porshe", "Cayene", 2, "benzyna", "aquamarine");
+ferrari = new Car("Ferrari", "Speed", 1, "benzyna", "czerwony");
+
+console.log(audi);
+console.log(porshe);
+console.log(ferrari);
+
+audi.showDetails();
+porshe.showDetails();
+ferrari.showDetails();
+
+</script>

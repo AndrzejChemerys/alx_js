@@ -1,0 +1,22 @@
+<script>
+
+ja = {
+	name: "James",
+	surname: "Bond",
+	
+	mission: function() {
+		console.log("Licence to kill for " + this.name +" "+ this.surname);
+	}
+}
+
+ja.mission();
+
+ja.stanowisko = "secret agent 00";
+ja.number = "7"
+ja.praca = function() {
+	console.log(this.name +" "+ this.surname + " works as " + this.stanowisko + this.number);
+}
+
+ja.praca();
+
+</script>

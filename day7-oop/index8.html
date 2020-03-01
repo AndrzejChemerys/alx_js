@@ -16,10 +16,10 @@ class Pacjent {
 		for (i of terminy) {
 			console.log(`${i}`);
 		}
-	};
+	}
 }
 
-class Przychodnia() {
+class Przychodnia {
 
 	constructor(nazwaPrzychodni) {
 		this.nazwaPrzychodni=nazwaPrzychodni;
@@ -28,28 +28,50 @@ class Przychodnia() {
 	}
 	
 	menu(){
-		while(true) {
-			let dec = (`Witaj w przychodni ${this.nazwa} \n D-dodaj pac., U-usun., T-dodaj termin pac., L-lista pac., K-koniec`);
+		let start = true;
+		while(start) {
+			let dec = prompt(`Witaj w przychodni ${this.nazwa} \n D-dodaj pac., U-usun., T-dodaj termin pac., L-lista pac., K-koniec`).toUpperCase();
 			
 			switch(dec) {
 			  case "D":
+				  let pName = prompt('Podaj imie');
+				  let pSurname = prompt('Podaj nazwisko');
+				  let newPac = new Pacjent(pName, pSurname);
+				  this.pacjenci.push(newPac);
 			  
 				break;
 				
-			  case "O":
-
+			  case "T":
+				let pSurnameDate = prompt('Podaj nazwisko');
+				for (let i in this.pacjenci) {
+					if (pSurnameDate == this.pacjenci[i].nazwisko) {
+						let pDate = prompt('Podaj termin');
+						this.pacjenci[i].terminy = pDate;
+						break;
+					}
+				}
 				break;
 				
 			  case "U":
-
+				let pSurnameDelete = prompt('Podaj nazwisko');
+				for (let i in this.pacjenci) {
+					if (pSurnameDelete == this.pacjenci[i].nazwisko) {
+						this.pacjenci.splice(i,1);
+						break;
+					}
+				}
+				console.log(this.pacjenci);
 				break;
 				
-			  case "P":	
-
+			  case "L":	
+				for (let p of this.pacjenci) {
+					//document.write(p);
+					console.log(`Pacjent: ${p.imie} ${p.nazwisko} ${p.terminy}`);
+				}
 				break;
 				
 			  case "K":
-
+				start = false;
 				break;
 
 			  default:
@@ -57,9 +79,11 @@ class Przychodnia() {
 			}
 		}
 	}
-
 }
 
+obj = new Przychodnia("ABC ZDROWIE");
+
+console.log(obj);
 
 </script>
 

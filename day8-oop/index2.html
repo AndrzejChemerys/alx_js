@@ -1,0 +1,125 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+</head>
+<body>
+<script>
+//##############################
+// Szkolenia / cw 76_1
+//##############################
+
+class Employe {
+	constructor(name, surname, contract, salary) {
+		this.name = name;
+		this.surname = surname;
+		this.contract = contract;
+		this.salary = salary;
+	}
+}
+
+class EmployeController {
+
+	constructor(){
+		this.employes = [];
+	}
+
+	addEmploye(name, surname, contract = "staż", salary = 1000) {
+		let newEmploye = new Employe(name, surname, contract, salary);
+		this.employes.push(newEmploye);
+	}
+	
+	showEmploye() {
+		for(let i of this.employes) {
+			console.log(`Pracownik: ${i.name} ${i.surname} ${i.salary}`)
+		}
+	}
+	
+	removeEmploye(eSurnameDelete) {
+		for (let i in this.employes) {
+			if (eSurnameDelete == this.employes[i].surname) {
+				this.employes.splice(i,1);
+				break;
+			}
+		}
+		console.log(this.employes);
+	}
+	
+	changeEmploye(eSurnameChange, eSalaryChange) {
+		for (let i of this.employes) {
+			if (eSurnameChange == i.surname) {
+				if (i.contract=="staż") {
+					i.contract=="etat";
+				}
+				i.salary = eSalaryChange;
+				break;
+			}
+		}
+		console.log(this.employes);
+	}
+}	
+
+class Company extends EmployeController {
+	constructor(companyName){
+		super();
+		this.companyName = companyName;
+		this.menu();
+	}
+	
+	menu() {
+		let start = true;
+		while(start) {
+		
+		let input = prompt(`Witaj w firmie ${this.companyName} \n D-dodaj, P-pokaż, U-usuń, Z-zmień, K-koniec`).toUpperCase();
+		
+		switch(input) {
+			  case "D":
+					let eName = prompt('Podaj imie');
+					let eSurname = prompt('Podaj nazwisko');
+					let eContract = prompt('Podaj kontrakt S/E').toUpperCase();
+						if(eContract == "S") {
+							this.addEmploye(eName, eSurname);
+						} else if (eContract == "E") {
+							let eSalary = parseInt(prompt('Podaj pensje'));
+							eContract = "etat";
+							this.addEmploye(eName, eSurname, eContract, eSalary);
+						} 
+
+				break;
+				
+			  case "P":
+					this.showEmploye();
+				break;
+				
+			  case "U":
+					let eSurnameDelete = prompt('Podaj nazwisko');
+					this.removeEmploye(eSurnameDelete);
+				break;
+				
+			  case "Z":	
+					let eSurnameChange = prompt('Podaj nazwisko');
+					let eSalaryChange = prompt('Podaj pensje');
+					this.changeEmploye(eSurnameChange, eSalaryChange);
+				break;
+				
+			  case "K":
+				start = false;
+				break;
+
+			  default:
+				//
+			}
+		}
+	}
+}
+
+let obj = new Company("ALX");
+
+console.log(obj);
+</script>
+</body>
+</html>
+
+
+
+
+

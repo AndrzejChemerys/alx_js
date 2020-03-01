@@ -1,0 +1,38 @@
+<script>
+//##############################
+// Szkolenia / 68_1
+//##############################
+
+class Product {
+	constructor(name, price) {
+		this.name = name;
+		this.price = price;
+	}
+}
+
+class Software extends Product {
+	constructor(name, price, language, system) {
+		super(name, price, language, system);
+		this.language = language;
+		this.system = system;
+	}
+}
+
+class Bootcamp extends Software {
+	constructor(name, price, language, system, date) {
+		super(name, price, language, system);
+		this.date = date;
+	}
+}
+
+let obj = new Bootcamp("Programowanie JS", 100, "polski", "Windows", "2019-02-16");
+
+console.log(obj);
+
+</script>
+
+
+
+
+
+

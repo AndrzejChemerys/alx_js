@@ -45,7 +45,7 @@ class Przychodnia {
 				let pSurnameDate = prompt('Podaj nazwisko');
 				for (let i in this.pacjenci) {
 					if (pSurnameDate == this.pacjenci[i].nazwisko) {
-						let pDate = prompt('Podaj termin');
+						let pDate = prompt('Podaj termin:');
 						this.pacjenci[i].terminy = pDate;
 						break;
 					}

@@ -70,16 +70,16 @@
 
 						case "Uu":
 							let studentSurnameDelete = prompt('Podaj nazwisko studenta');
-							this.removeEmploye(studentSurnameDelete);
+							this.removeStudent(studentSurnameDelete);
 							break;
 
-						// case "Uk":
-						// 	let studentSurnameDelete = prompt('Podaj nazwisko studenta');
-						// 	this.removeEmploye(studentSurnameDelete);
-						// 	break;
+						case "Uk":
+							let courseTitleDelete = prompt('Podaj nazwe kursu');
+							this.removeCourse(courseTitleDelete);
+							break;
 
 						case "W":
-							this.showEmploye();
+							this.showCourse();
 						break;
 
 						case "K":
@@ -103,25 +103,27 @@
 				this.students.push(newStudent);
 			}
 			
-			// showEmploye() {
-			// 	for (let i of this.employes) {
-			// 		console.log(`Pracownik: ${i.name} ${i.surname} ${i.salary}`)
-			// 	}
-			// }
+			showCourse() {
+				for (let i of this.courses) {
+					console.log(`Pracownik: ${i.title} ${i.trainers} ${i.students} ${i.date} ${i.localisation}`);
+				}
+			}
 
-			removeStudent(studentSurnameDelete) {
-				for (let i in this.students) {
-					if (studentSurnameDelete == this.students[i].surname) {
-						this.students.splice(i, 1);
+			removeCourse(courseTitleDelete) {
+				for (let i in this.title) {
+					if (courseTitleDelete == this.courses[i].title) {
+						this.courses.splice(i, 1);
 						break;
 					}
 				}
-				console.log(this.students);
+				console.log(this.courses);
 			}
 		}
 
 		let obj = new Course("ALX");
 		console.log(obj);
+		let courses = [];
+
 	</script>
 </body>
 

@@ -1,138 +1,128 @@
 <html>
+
 <head>
 	<meta charset="utf-8" />
 </head>
+
 <body>
-<script>
+	<script>
+		//####################################
+		// Zadanie domowe 4.1
+		// Andrii Chemerys
+		// Warszawa, 02-03-2020r.
+		//####################################
 
-//####################################
-// Zadanie domowe 4.1
-// Andrii Chemerys
-// Warszawa, 02-03-2020r.
-//####################################
-
-class Trainer {
-	constructor(name, surname, specialty) {
-		this.name = name;
-		this.surname = surname;
-		this.speciality = specialty;
-	}
-}
-
-class Student {
-	constructor(name, surname, phone, email) {
-		this.name = name;
-		this.surname = surname;
-		this.phone = phone;
-		this.email = email;
-	}
-}
-
-class Course {
-
-	constructor(title, trainer, date, students, localisation){
-		this.title = title;
-		this.surname = surname;
-		this.employes = [];
-	}
-
-	addEmploye(name, surname, contract = "staż", salary = 1000) {
-		let newEmploye = new Employe(name, surname, contract, salary);
-		this.employes.push(newEmploye);
-	}
-	
-	showEmploye() {
-		for(let i of this.employes) {
-			console.log(`Pracownik: ${i.name} ${i.surname} ${i.salary}`)
-		}
-	}
-	
-	removeEmploye(eSurnameDelete) {
-		for (let i in this.employes) {
-			if (eSurnameDelete == this.employes[i].surname) {
-				this.employes.splice(i,1);
-				break;
+		class Trainer {
+			constructor(name, surname, specialty) {
+				this.name = name;
+				this.surname = surname;
+				this.speciality = specialty;
 			}
 		}
-		console.log(this.employes);
-	}
-	
-	changeEmploye(eSurnameChange, eSalaryChange) {
-		for (let i of this.employes) {
-			if (eSurnameChange == i.surname) {
-				if (i.contract=="staż") {
-					i.contract=="etat";
+
+		class Student {
+			constructor(name, surname, phone, email) {
+				this.name = name;
+				this.surname = surname;
+				this.phone = phone;
+				this.email = email;
+			}
+		}
+
+		class Course {
+			constructor(title, trainer, date, students, localisation) {
+				this.title = title;
+				this.trainers = [];
+				this.date = date;
+				this.students = [];
+				this.localisation = localisation;
+				this.menu();
+			}
+
+			menu() {
+				let start = true;
+				while (start) {
+
+					let input = prompt(
+							`Witaj w firmie szkoleniowej ${this.companyName} \n Dk-dodaj kurs, Dt-dodaj trenera, Du-dodaj uczestnika, Uu-usuń uczestnika z kursu, Uk-usuń kurs, W-wyświetl kursy wraz z trenerami prow. oraz uczestnikami, K-koniec`).toUpperCase();
+
+					switch (input) {
+						case "Dk":
+							let courseTitle = prompt('Podaj nazwe kursu');
+							let courseDate = prompt('Podaj terminy');
+							let courseLocalisation = prompt('Podaj lokalizacje');
+							break;
+
+						case "Dt":
+							let trainerName = prompt('Podaj imie');
+							let trainerSurname = prompt('Podaj nazwisko');
+							let trainerSpeciality = prompt('Podaj specjalizacje');		
+							this.addTrainer(trainerName, trainerSurname, trainerSpeciality);
+							break;
+
+						case "Du":
+							let studentName = prompt('Podaj imie');
+							let studentSurname = prompt('Podaj nazwisko');
+							let studentPhone = prompt('Podaj telefon');
+							let studentEmail = prompt('Podaj email');
+							this.addStudent(studentName, studentSurname, studentPhone, studentEmail);
+							break;
+
+						case "Uu":
+							let studentSurnameDelete = prompt('Podaj nazwisko studenta');
+							this.removeEmploye(studentSurnameDelete);
+							break;
+
+						// case "Uk":
+						// 	let studentSurnameDelete = prompt('Podaj nazwisko studenta');
+						// 	this.removeEmploye(studentSurnameDelete);
+						// 	break;
+
+						case "W":
+							this.showEmploye();
+						break;
+
+						case "K":
+							start = false;
+							break;
+
+						default:
+							//
+					}
 				}
-				i.salary = eSalaryChange;
-				break;
+
+			}
+
+			addTrainer(name, surname, specialty) {
+				let newTrainer = new Trainer(name, surname, specialty);
+				this.trainers.push(newTrainer);
+			}
+
+			addStudent(name, surname, phone, email) {
+				let newStudent = new Student(name, surname, phone, email);
+				this.students.push(newStudent);
+			}
+			
+			// showEmploye() {
+			// 	for (let i of this.employes) {
+			// 		console.log(`Pracownik: ${i.name} ${i.surname} ${i.salary}`)
+			// 	}
+			// }
+
+			removeStudent(studentSurnameDelete) {
+				for (let i in this.students) {
+					if (studentSurnameDelete == this.students[i].surname) {
+						this.students.splice(i, 1);
+						break;
+					}
+				}
+				console.log(this.students);
 			}
 		}
-		console.log(this.employes);
-	}
-}	
 
-class Company extends EmployeController {
-	constructor(companyName){
-		super();
-		this.companyName = companyName;
-		this.menu();
-	}
-	
-	menu() {
-		let start = true;
-		while(start) {
-		
-		let input = prompt(`Witaj w firmie ${this.companyName} \n D-dodaj, P-pokaż, U-usuń, Z-zmień, K-koniec`).toUpperCase();
-		
-		switch(input) {
-			  case "D":
-					let eName = prompt('Podaj imie');
-					let eSurname = prompt('Podaj nazwisko');
-					let eContract = prompt('Podaj kontrakt S/E').toUpperCase();
-						if(eContract == "S") {
-							this.addEmploye(eName, eSurname);
-						} else if (eContract == "E") {
-							let eSalary = parseInt(prompt('Podaj pensje'));
-							eContract = "etat";
-							this.addEmploye(eName, eSurname, eContract, eSalary);
-						} 
-
-				break;
-				
-			  case "P":
-					this.showEmploye();
-				break;
-				
-			  case "U":
-					let eSurnameDelete = prompt('Podaj nazwisko');
-					this.removeEmploye(eSurnameDelete);
-				break;
-				
-			  case "Z":	
-					let eSurnameChange = prompt('Podaj nazwisko');
-					let eSalaryChange = prompt('Podaj pensje');
-					this.changeEmploye(eSurnameChange, eSalaryChange);
-				break;
-				
-			  case "K":
-				start = false;
-				break;
-
-			  default:
-				//
-			}
-		}
-	}
-}
-
-let obj = new Company("ALX");
-
-console.log(obj);
-</script>
+		let obj = new Course("ALX");
+		console.log(obj);
+	</script>
 </body>
+
 </html>
-
-
-
-
-

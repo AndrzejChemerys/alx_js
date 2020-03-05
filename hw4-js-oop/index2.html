@@ -13,10 +13,10 @@
 		//####################################
 
 		class Trainer {
-			constructor(name, surname, specialty) {
+			constructor(name, surname, speciality) {
 				this.name = name;
 				this.surname = surname;
-				this.speciality = specialty;
+				this.speciality = speciality;
 			}
 		}
 
@@ -40,7 +40,7 @@
 		}
 
 		class School extends Course {
-		 	constructor(title, date, localisation, trainer, students, name) {
+		 	constructor(title, date, localisation, trainer, students) {
 				super(title, date, localisation, trainer, students);
 				this.name = name;
 		 		this.courses=[];
@@ -123,29 +123,41 @@
 						console.log('Taki kurs istnieje i trener zostal przypisany!');
 						i.trainers.push(newTrainer);
 						break;
+					} else {
+						console.log('Nie ma takiego kursu!');
 					}
 				}
 			}
 
-			// addStudent(name, surname, phone, email) {
-			// 	let newStudent = new Student(name, surname, phone, email);
-			// 	this.students.push(newStudent);
-			// 	console.log('addStudents');
-			// 	console.log(newStudent);
-			// 	console.log(this.students);
-			// 	// for (let i of courses) {
-			// 	// 	if (course == i.title) {
-			// 	// 		this.students.push(newStudent);
-			// 	// 		break;
-			// 	// 	}
-			// 	// }
-			// }
+			addStudent(name, surname, phone, email, course) {
+				let newStudent = new Student(name, surname, phone, email, course);
+				console.log('addStudents');
+				console.log(newStudent);
+				
+				for (let i of this.courses) {
+					if (course == i.title) {
+						console.log('Taki kurs istnieje i student zostal zapisany!');
+						i.students.push(newStudent);
+						break;
+					} else {
+						console.log('Nie ma takiego kursu!');
+					}
+				}
+			}
 
-			// showCourse() {
-			// 	for (let i of this.courses) {
-			// 		console.log(`Pracownik: ${i.title} ${i.trainers} ${i.students} ${i.date} ${i.localisation}`);
-			// 	}
-			// }
+			showCourse() {
+				for (let crs of this.courses) {
+					console.log(`Kurs: ${crs.title}, data: ${crs.date}, lokalizacja: ${crs.localisation}`);
+					console.log(`Lista studentow: `);
+					for (let std of crs.students) {
+						console.log(`Student - ${std.name} ${std.surname}, nr. tel: ${std.phone}, e-mail: ${std.email}.`);
+					}
+					console.log(`Lista trenerów: `);
+					for (let trn of crs.trainers) {
+						console.log(`Trener - ${trn.name} ${trn.surname}, specjalizacja: ${trn.speciality}.`);
+					}
+				} 
+			}
 
 			// removeCourse(courseTitleDelete) {
 			// 	for (let i in this.title) {

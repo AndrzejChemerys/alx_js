@@ -35,15 +35,16 @@
 				this.trainers = [];
 				this.date = date;
 				this.students = [];
-				this.localisation = localisation;DOMTokenList
+				this.localisation = localisation;
+				DOMTokenList
 			}
 		}
 
 		class School extends Course {
-		 	constructor(title, date, localisation, trainer, students) {
+			constructor(title, date, localisation, trainer, students) {
 				super(title, date, localisation, trainer, students);
 				this.name = name;
-		 		this.courses=[];
+				this.courses = [];
 				this.menu();
 			}
 
@@ -53,7 +54,7 @@
 
 					let input = prompt(
 						`Witaj w firmie szkoleniowej ${this.title} \n Dk-dodaj kurs, Dt-dodaj trenera, Du-dodaj uczestnika, Uu-usuń uczestnika z kursu, Uk-usuń kurs, W-wyświetl kursy wraz z trenerami prow. oraz uczestnikami, K-koniec`
-						).toUpperCase();
+					).toUpperCase();
 
 					switch (input) {
 						case "DK":
@@ -82,7 +83,8 @@
 
 						case "UU":
 							let studentSurnameDelete = prompt('Podaj nazwisko studenta');
-							this.removeStudent(studentSurnameDelete);
+							let studentCourseDelete = prompt('Podaj kurs');
+							this.removeStudent(studentSurnameDelete, studentCourseDelete);
 							break;
 
 						case "UK":
@@ -108,19 +110,17 @@
 			addCourse(courseTitle, courseDate, courseLocalisation) {
 				let newCourse = new Course(courseTitle, courseDate, courseLocalisation);
 				this.courses.push(newCourse);
-				console.log('addCourse - complete');
+				console.log('Dodano nowy kurs!');
 				console.log(newCourse);
 			}
 
 			addTrainer(name, surname, specialty, course) {
 				let newTrainer = new Trainer(name, surname, specialty, course);
-				console.log('addTrainer - complete');
-				console.log(newTrainer);
 
 				for (let i of this.courses) {
-					console.log(i);
 					if (course == i.title) {
 						console.log('Taki kurs istnieje i trener zostal przypisany!');
+						console.log(newTrainer);
 						i.trainers.push(newTrainer);
 						break;
 					} else {
@@ -131,12 +131,11 @@
 
 			addStudent(name, surname, phone, email, course) {
 				let newStudent = new Student(name, surname, phone, email, course);
-				console.log('addStudents');
-				console.log(newStudent);
-				
+
 				for (let i of this.courses) {
 					if (course == i.title) {
 						console.log('Taki kurs istnieje i student zostal zapisany!');
+						console.log(newStudent);
 						i.students.push(newStudent);
 						break;
 					} else {
@@ -147,27 +146,41 @@
 
 			showCourse() {
 				for (let crs of this.courses) {
+					console.log(`------------------------------------------------------------`);
 					console.log(`Kurs: ${crs.title}, data: ${crs.date}, lokalizacja: ${crs.localisation}`);
+
 					console.log(`Lista studentow: `);
+					let stdCount = 0;
 					for (let std of crs.students) {
-						console.log(`Student - ${std.name} ${std.surname}, nr. tel: ${std.phone}, e-mail: ${std.email}.`);
+						stdCount++;
+						console.log(
+							`Student ${stdCount} - ${std.name} ${std.surname}, nr. tel: ${std.phone}, e-mail: ${std.email}.`
+						);
 					}
+
 					console.log(`Lista trenerów: `);
+					let trnCount = 0;
 					for (let trn of crs.trainers) {
-						console.log(`Trener - ${trn.name} ${trn.surname}, specjalizacja: ${trn.speciality}.`);
+						trnCount++;
+						console.log(`Trener ${trnCount} - ${trn.name} ${trn.surname}, specjalizacja: ${trn.speciality}.`);
 					}
-				} 
+					console.log(`------------------------------------------------------------`);
+				}
 			}
 
-			removeStudent(studentSurnameDelete) {
-				for (let std in this.surname) {
-					if (studentSurnameDelete == this.students[std].surname) {
-						this.students.splice(std, 1);
+			removeStudent(studentSurnameDelete, studentCourseDelete) {
+				for (let tlt in this.title) {
+					if (studentCourseDelete == this.courses[tlt].title) {
+						for (let std in this.courses[tlt].students) {
+							if (studentSurnameDelete == this.courses[tlt].students[std].surname) {
+								this.courses[tlt].students.splice(std, 1);
+								break;
+							}
+						}
+						console.log(`Studenta ${studentSurnameDelete} usunięto z kursu ${studentCourseDelete}!`);
 						break;
 					}
 				}
-				console.log('Studenta usunięto z kursu!');
-				console.log(this.students);
 			}
 
 			removeCourse(courseTitleDelete) {
@@ -184,7 +197,6 @@
 
 		let obj = new School("ALX");
 		console.log(obj);
-		
 	</script>
 </body>
 

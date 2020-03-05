@@ -9,7 +9,7 @@
 		//####################################
 		// Zadanie domowe 4.1
 		// Andrii Chemerys
-		// Warszawa, 04-03-2020r.
+		// Warszawa, 05-03-2020r.
 		//####################################
 
 		class Trainer {
@@ -157,6 +157,17 @@
 						console.log(`Trener - ${trn.name} ${trn.surname}, specjalizacja: ${trn.speciality}.`);
 					}
 				} 
+			}
+
+			removeStudent(studentSurnameDelete) {
+				for (let std in this.surname) {
+					if (studentSurnameDelete == this.students[std].surname) {
+						this.students.splice(std, 1);
+						break;
+					}
+				}
+				console.log('Studenta usunięto z kursu!');
+				console.log(this.students);
 			}
 
 			removeCourse(courseTitleDelete) {

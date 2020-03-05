@@ -9,7 +9,7 @@
 		//####################################
 		// Zadanie domowe 4.1
 		// Andrii Chemerys
-		// Warszawa, 02-03-2020r.
+		// Warszawa, 04-03-2020r.
 		//####################################
 
 		class Trainer {
@@ -30,12 +30,20 @@
 		}
 
 		class Course {
-			constructor(title, trainer, date, students, localisation) {
+			constructor(title, date, localisation, trainer, students) {
 				this.title = title;
 				this.trainers = [];
 				this.date = date;
 				this.students = [];
-				this.localisation = localisation;
+				this.localisation = localisation;DOMTokenList
+			}
+		}
+
+		class School extends Course {
+		 	constructor(title, date, localisation, trainer, students, name) {
+				super(title, date, localisation, trainer, students);
+				this.name = name;
+		 		this.courses=[];
 				this.menu();
 			}
 
@@ -44,43 +52,47 @@
 				while (start) {
 
 					let input = prompt(
-							`Witaj w firmie szkoleniowej ${this.companyName} \n Dk-dodaj kurs, Dt-dodaj trenera, Du-dodaj uczestnika, Uu-usuń uczestnika z kursu, Uk-usuń kurs, W-wyświetl kursy wraz z trenerami prow. oraz uczestnikami, K-koniec`).toUpperCase();
+						`Witaj w firmie szkoleniowej ${this.title} \n Dk-dodaj kurs, Dt-dodaj trenera, Du-dodaj uczestnika, Uu-usuń uczestnika z kursu, Uk-usuń kurs, W-wyświetl kursy wraz z trenerami prow. oraz uczestnikami, K-koniec`
+						).toUpperCase();
 
 					switch (input) {
-						case "Dk":
+						case "DK":
 							let courseTitle = prompt('Podaj nazwe kursu');
 							let courseDate = prompt('Podaj terminy');
 							let courseLocalisation = prompt('Podaj lokalizacje');
+							this.addCourse(courseTitle, courseDate, courseLocalisation);
 							break;
 
-						case "Dt":
+						case "DT":
 							let trainerName = prompt('Podaj imie');
 							let trainerSurname = prompt('Podaj nazwisko');
-							let trainerSpeciality = prompt('Podaj specjalizacje');		
-							this.addTrainer(trainerName, trainerSurname, trainerSpeciality);
+							let trainerSpeciality = prompt('Podaj specjalizacje');
+							let trainerCourse = prompt('Podaj kurs');
+							this.addTrainer(trainerName, trainerSurname, trainerSpeciality, trainerCourse);
 							break;
 
-						case "Du":
+						case "DU":
 							let studentName = prompt('Podaj imie');
 							let studentSurname = prompt('Podaj nazwisko');
 							let studentPhone = prompt('Podaj telefon');
 							let studentEmail = prompt('Podaj email');
-							this.addStudent(studentName, studentSurname, studentPhone, studentEmail);
+							let studentCourse = prompt('Podaj kurs');
+							this.addStudent(studentName, studentSurname, studentPhone, studentEmail, studentCourse);
 							break;
 
-						case "Uu":
+						case "UU":
 							let studentSurnameDelete = prompt('Podaj nazwisko studenta');
 							this.removeStudent(studentSurnameDelete);
 							break;
 
-						case "Uk":
+						case "UK":
 							let courseTitleDelete = prompt('Podaj nazwe kursu');
 							this.removeCourse(courseTitleDelete);
 							break;
 
 						case "W":
 							this.showCourse();
-						break;
+							break;
 
 						case "K":
 							start = false;
@@ -93,37 +105,62 @@
 
 			}
 
-			addTrainer(name, surname, specialty) {
-				let newTrainer = new Trainer(name, surname, specialty);
-				this.trainers.push(newTrainer);
+			addCourse(courseTitle, courseDate, courseLocalisation) {
+				let newCourse = new Course(courseTitle, courseDate, courseLocalisation);
+				this.courses.push(newCourse);
+				console.log('addCourse - complete');
+				console.log(newCourse);
 			}
 
-			addStudent(name, surname, phone, email) {
-				let newStudent = new Student(name, surname, phone, email);
-				this.students.push(newStudent);
-			}
-			
-			showCourse() {
+			addTrainer(name, surname, specialty, course) {
+				let newTrainer = new Trainer(name, surname, specialty, course);
+				console.log('addTrainer - complete');
+				console.log(newTrainer);
+
 				for (let i of this.courses) {
-					console.log(`Pracownik: ${i.title} ${i.trainers} ${i.students} ${i.date} ${i.localisation}`);
-				}
-			}
-
-			removeCourse(courseTitleDelete) {
-				for (let i in this.title) {
-					if (courseTitleDelete == this.courses[i].title) {
-						this.courses.splice(i, 1);
+					console.log(i);
+					if (course == i.title) {
+						console.log('Taki kurs istnieje i trener zostal przypisany!');
+						i.trainers.push(newTrainer);
 						break;
 					}
 				}
-				console.log(this.courses);
 			}
+
+			// addStudent(name, surname, phone, email) {
+			// 	let newStudent = new Student(name, surname, phone, email);
+			// 	this.students.push(newStudent);
+			// 	console.log('addStudents');
+			// 	console.log(newStudent);
+			// 	console.log(this.students);
+			// 	// for (let i of courses) {
+			// 	// 	if (course == i.title) {
+			// 	// 		this.students.push(newStudent);
+			// 	// 		break;
+			// 	// 	}
+			// 	// }
+			// }
+
+			// showCourse() {
+			// 	for (let i of this.courses) {
+			// 		console.log(`Pracownik: ${i.title} ${i.trainers} ${i.students} ${i.date} ${i.localisation}`);
+			// 	}
+			// }
+
+			// removeCourse(courseTitleDelete) {
+			// 	for (let i in this.title) {
+			// 		if (courseTitleDelete == this.courses[i].title) {
+			// 			this.courses.splice(i, 1);
+			// 			break;
+			// 		}
+			// 	}
+			// 	console.log(this.courses);
+			// }
 		}
 
-		let obj = new Course("ALX");
+		let obj = new School("ALX");
 		console.log(obj);
-		let courses = [];
-
+		
 	</script>
 </body>
 

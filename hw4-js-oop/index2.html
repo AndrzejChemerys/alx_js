@@ -173,11 +173,11 @@
 					if (studentCourseDelete == this.courses[tlt].title) {
 						for (let std in this.courses[tlt].students) {
 							if (studentSurnameDelete == this.courses[tlt].students[std].surname) {
+								console.log(`Studenta ${studentSurnameDelete} usunięto z kursu ${studentCourseDelete}!`);
 								this.courses[tlt].students.splice(std, 1);
 								break;
 							}
-						}
-						console.log(`Studenta ${studentSurnameDelete} usunięto z kursu ${studentCourseDelete}!`);
+						}						
 						break;
 					}
 				}

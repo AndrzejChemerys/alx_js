@@ -159,15 +159,16 @@
 				} 
 			}
 
-			// removeCourse(courseTitleDelete) {
-			// 	for (let i in this.title) {
-			// 		if (courseTitleDelete == this.courses[i].title) {
-			// 			this.courses.splice(i, 1);
-			// 			break;
-			// 		}
-			// 	}
-			// 	console.log(this.courses);
-			// }
+			removeCourse(courseTitleDelete) {
+				for (let tlt in this.title) {
+					if (courseTitleDelete == this.courses[tlt].title) {
+						this.courses.splice(tlt, 1);
+						break;
+					}
+				}
+				console.log('Kurs usunięto!');
+				console.log(this.courses);
+			}
 		}
 
 		let obj = new School("ALX");

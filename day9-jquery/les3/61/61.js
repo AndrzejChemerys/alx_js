@@ -1,42 +1,15 @@
 $(document).ready(function(){
 
-	
-
-
-
-	$('#bold .dodaj').click(function(){
-		$(napisTestowy).addClass('bold');
-	});
-
-	$('#bold .usun').click(function(){
-		$(napisTestowy).removeClass('bold');
-	});
+	$('span').click(function(){
 		
-	$('#borderBottom .dodaj').click(function(){
-		$(napisTestowy).addClass('borderBottom');
+		let id = $(this).parent().attr('id');
+		let class_ = $(this).attr('class');
+		
+		if(class_ == "dodaj"){
+			$('#napisTestowy').addClass(id);
+		}
+		else {
+			$('#napisTestowy').removeClass(id);
+		}
 	});
-
-	$('#borderBottom .usun').click(function(){
-		$(napisTestowy).removeClass('borderBottom');
-	});
-	
-	$('#fontSize30 .dodaj').click(function(){
-		$(napisTestowy).addClass('fontSize30');
-	});
-
-	$('#fontSize30 .usun').click(function(){
-		$(napisTestowy).removeClass('fontSize30');
-	});
-	
-	$('#colorRed .dodaj').click(function(){
-		$(napisTestowy).addClass('colorRed');
-	});
-
-	$('#colorRed .usun').click(function(){
-		$(napisTestowy).removeClass('colorRed');
-	});
-	
-/*
-*/
-
 });

@@ -13,7 +13,15 @@ class EditContacts extends Component {
     }
 
     editContact = () => {
+        let newContact = {
+            imie : this.state.imie,
+            nazwisko : this.state.nazwisko,
+            email : this.state.email,
+            telefon : this.state.telefon
+        }
 
+        this.dane[this.id] = newContact;
+        localStorage.setItem("Phonebook", JSON.stringify(this.dane))
     }
 
     cancel = () => {

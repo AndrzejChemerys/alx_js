@@ -18,6 +18,40 @@ app.set('view engine', 'ejs');
 app.listen(8080);
 console.log('Serwer pomyślnie uruchomiony na porcie 8080');
 
+//tablica zawierajaca liste postow w postaci obiektow (literaly)
+
+let posts = [];
+
 app.get('/', function(req, res) {
-	res.render('index', {imie:"Robert"});
+	res.render('index', {posts: posts});
+});
+
+app.get('/insertPost', function(req, res) {
+	res.render('insertPost');
+});
+
+app.post('/insertPost', function(req, res) {
+
+	let obj = {
+		title: req.body['title'],
+		description: req.body['description']
+	}
+
+	posts.push(obj);
+
+	res.render('index', {posts: posts});
+
+});
+
+app.get('/details/:id', function(req, res) {
+
+	let id = req.params.id;
+	res.render('details', {post: posts[id]});
+});
+
+app.get('/delete/:id', function(req, res) {
+
+	let id = req.params.id;
+	posts.splice(id, 1);
+	res.render('index', {posts: posts});
 });

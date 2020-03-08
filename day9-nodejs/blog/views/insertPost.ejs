@@ -1,0 +1,18 @@
+<%- include ('header') %>
+
+<h2>Formularz dodawania nowego postu do bloga</h2>
+<form action="/insertPost" method="post">
+    <p>
+        <label for="">Tytuł artykułu:</label><br/>
+        <input type="text" name="title" placeholder="tytuł">
+    </p>
+    <p>
+        <label for="">Treść artykułu:</label><br/>
+        <textarea name="description" placeholder="opis"></textarea>
+    </p>
+    <p>
+        <input type="submit" value="Dodaj nowy post"/>
+    </p>
+</form>
+
+<%- include ('footer') %>

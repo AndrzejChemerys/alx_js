@@ -1,1 +1,16 @@
-<h1>HELLO</h1>
+<%- include ('header') %>
+
+<ul>
+    <% posts.forEach(function(dane, index) { %>
+
+        <li>
+            <b><%= dane.title %></b>
+            <a href="/details/<%- index %>">Pokaż szczegóły </a>
+            <a href="/delete/<%- index %>">Usuń </a>
+        </li>
+
+    <% }); %>
+
+</ul>
+
+<%- include ('footer') %>

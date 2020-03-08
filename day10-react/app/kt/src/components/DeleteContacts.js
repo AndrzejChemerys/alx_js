@@ -20,6 +20,10 @@ class DeleteContacts extends Component {
         this.setState({redirect : true})       
     }
 
+    valueChange = (event) => {
+        this.setState({[event.target.name]: event.target.value});
+    }
+
     render() {
         
         if(this.state.redirect === true) {

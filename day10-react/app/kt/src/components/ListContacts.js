@@ -33,6 +33,7 @@ class ListContacts extends Component {
                         <td>{value.email}</td>
                         <td>{value.telefon}</td>
                         <td><Link to = {`/del/${key}`}>Usuń</Link></td>
+                        <td><Link to = {`/edit/${key}`}>Edytuj</Link></td>
                     </tr>
                 
                 ) : <tr><td colspan="4"></td></tr> } 

@@ -20,7 +20,7 @@ function addUser() {
 	if (dane == null) {
 		dane = [];
 		
-		
+
 	} else {
 		dane = JSON.parse(dane);
 	}

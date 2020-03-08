@@ -3,6 +3,7 @@ import { BrowserRouter, Router, Switch, Link, Route } from "react-router-dom";
 import AddContacts from "./components/AddContacts";
 import ListContacts from "./components/ListContacts";
 import DeleteContacts from './components/DeleteContacts';
+import EditContacts from './components/EditContacts';
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
             <Route path="/add" component={AddContacts} />
             <Route exact path="/" component={ListContacts} />
             <Route path="/del/:id" component={DeleteContacts} />
+            <Route path="/edit/:id" component={EditContacts} />
           </Switch>
         </BrowserRouter>
 

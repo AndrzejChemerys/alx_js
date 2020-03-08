@@ -1,0 +1,20 @@
+<%- include ('header') %>
+
+<h2>Formularz edycji nowego posta do bloga</h2>
+<form action="/editPost/<%= id %>" method="post">
+    <p>
+        <label for="">Tytuł artykułu:</label><br/>
+        <input type="text" name="title" placeholder="tytuł" value="<%= post.title %>">
+    </p>
+    <p>
+        <label for="">Treść artykułu:</label><br/>
+        <textarea name="description" placeholder="opis">
+            <%= post.description %>
+        </textarea>
+    </p>
+    <p>
+        <input type="submit" value="Dodaj nowy post"/>
+    </p>
+</form>
+
+<%- include ('footer') %>
